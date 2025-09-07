@@ -18,23 +18,24 @@
             
             <div class="space-y-4 body-md text-gray-600">
               <p>
-                A <strong class="company-name">Quartzo Engenharia</strong> nasceu da paixão pela engenharia civil 
-                e do compromisso com a excelência técnica. Fundada em 2013, nossa empresa se consolidou 
-                como referência em projetos estruturais, consultoria técnica e soluções inovadoras 
-                para o setor da construção civil.
+                A <strong class="company-name">Quartzo Engenharia</strong> foi fundada em 15 de janeiro de 2024 
+                pelo engenheiro civil Erick Antonio em Canaã dos Carajás, Pará. Nossa empresa nasceu 
+                da experiência acumulada em obras públicas, incluindo escolas, unidades do CRAS e outros 
+                projetos municipais desenvolvidos ao longo da carreira profissional.
               </p>
               
               <p>
-                Com uma equipe multidisciplinar de engenheiros especializados, desenvolvemos projetos 
-                que aliam segurança, funcionalidade e sustentabilidade. Nossa abordagem técnica 
-                rigorosa e o atendimento personalizado garantem resultados que superam as expectativas 
-                de nossos clientes.
+                Com formação em engenharia civil concluída em 2021 no estado do Tocantins, nosso fundador 
+                trouxe para o Pará a expertise em construção, consultoria e elaboração de orçamentos, 
+                estabelecendo a empresa como uma referência regional em soluções de engenharia civil 
+                com foco na qualidade, segurança e plena satisfação dos clientes.
               </p>
               
               <p>
-                Acreditamos que cada projeto é único e merece atenção especial. Por isso, 
-                trabalhamos em estreita colaboração com arquitetos, construtores e proprietários 
-                para entregar soluções sob medida que atendam às necessidades específicas de cada empreendimento.
+                Atualmente, desenvolvemos projetos para a Secretaria Municipal de Habitação, 
+                galpões comerciais e projetos residenciais, sempre com o compromisso de entregar 
+                soluções técnicas inovadoras que atendam às necessidades específicas de cada cliente 
+                e às particularidades da região Norte do Brasil.
               </p>
             </div>
           </div>
@@ -69,8 +70,8 @@
                   🏆
                 </div>
                 <div>
-                  <div class="font-bold text-wine-900">10+ Anos</div>
-                  <div class="text-xs text-gray-600">de Experiência</div>
+                  <div class="font-bold text-wine-900">1+ Ano</div>
+                  <div class="text-xs text-gray-600">em Canaã dos Carajás</div>
                 </div>
               </div>
             </div>
@@ -142,54 +143,42 @@ export default {
   data() {
     return {
       companyStats: [
-        { value: '500+', label: 'Projetos Entregues' },
-        { value: '50+', label: 'Clientes Ativos' },
-        { value: '100%', label: 'Aprovação CREA' }
+        { value: '1+', label: 'Ano de Atuação' },
+        { value: '15+', label: 'Projetos Entregues' },
+        { value: '100%', label: 'Aprovação Técnica' }
       ],
       
       companyPillars: [
         {
           icon: '🎯',
           title: 'Missão',
-          description: 'Desenvolver projetos de engenharia civil com excelência técnica, inovação e responsabilidade, contribuindo para construções seguras e sustentáveis.'
+          description: 'Oferecer soluções em engenharia civil com excelência técnica, transparência e comprometimento, atuando na construção, consultoria e elaboração de orçamentos com foco na qualidade, segurança e plena satisfação dos clientes.'
         },
         {
           icon: '👁️',
           title: 'Visão',
-          description: 'Ser reconhecida como a principal referência em projetos estruturais na região, conhecida pela qualidade, inovação e compromisso com nossos clientes.'
+          description: 'Ser referência regional em engenharia civil e consultoria técnica, reconhecida pela confiabilidade, inovação e impacto positivo nas obras que realizamos e nos projetos que orientamos.'
         },
         {
           icon: '💎',
           title: 'Valores',
-          description: 'Ética profissional, qualidade técnica, inovação constante, responsabilidade social e compromisso com a segurança em todos os projetos.'
+          description: 'Ética e transparência: atuamos com integridade em todas as etapas do processo. Comprometimento com o cliente: buscamos sempre superar expectativas com soluções personalizadas. Qualidade técnica: utilizamos as melhores práticas da engenharia, com precisão e responsabilidade. Inovação e melhoria contínua: estamos sempre em evolução, acompanhando novas tecnologias e normas. Sustentabilidade: valorizamos o uso racional de recursos e práticas conscientes nas obras. Colaboração e respeito: valorizamos a equipe, os parceiros e todos os envolvidos em cada projeto.'
         }
       ],
       
       teamMembers: [
         {
-          name: 'João Silva',
-          role: 'Engenheiro Civil - CREA 123456',
-          description: 'Especialista em estruturas de concreto armado com 15 anos de experiência',
+          name: 'Erick Antonio',
+          role: 'Engenheiro Civil - Fundador',
+          description: 'Especialista em obras públicas e residenciais, graduado em 2021 no Tocantins com experiência em projetos municipais',
           avatar: '👨‍💼'
-        },
-        {
-          name: 'Maria Santos',
-          role: 'Engenheira Estrutural - CREA 789012',
-          description: 'Especialista em estruturas metálicas e projetos industriais',
-          avatar: '👩‍💼'
-        },
-        {
-          name: 'Carlos Oliveira',
-          role: 'Engenheiro de Segurança - CREA 345678',
-          description: 'Especialista em análise de riscos e segurança estrutural',
-          avatar: '👨‍🔬'
         }
       ],
       
       certifications: [
         {
           icon: '📋',
-          name: 'CREA-SP',
+          name: 'CREA-PA',
           description: 'Registro Ativo e Regularizado'
         },
         {

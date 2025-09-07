@@ -198,108 +198,108 @@ export default {
       isModalOpen: false,
       selectedProject: null,
       
-      // Extended projects data
+      // Extended projects data for Pará region
       allProjects: [
         {
-          id: 'residencial-alto-padrao',
-          title: 'Casa Residencial Alto Padrão',
-          description: 'Projeto estrutural completo para residência de alto padrão com piscina, área gourmet e subsolo',
+          id: 'residencial-canaa',
+          title: 'Residencial Familiar - Canaã',
+          description: 'Projeto residencial unifamiliar com estrutura otimizada para o clima amazônico e fundações adaptadas ao solo regional',
           category: 'Residencial',
-          location: 'Alphaville, SP',
-          area: '450m²',
-          year: '2023',
+          location: 'Canaã dos Carajás, PA',
+          area: '180m²',
+          year: '2024',
           status: 'Concluído',
-          tags: ['Concreto Armado', 'Piscina', 'Subsolo', 'Área Gourmet'],
+          tags: ['Concreto Armado', 'Clima Amazônico', 'Solo Regional', 'Sustentável'],
           details: [
-            'Estrutura em concreto armado',
-            'Fundação em sapatas isoladas',
-            'Laje nervurada para grandes vãos',
-            'Sistema de impermeabilização para piscina'
+            'Estrutura em concreto armado adaptada ao clima tropical',
+            'Fundação em radier devido às características do solo',
+            'Sistema de drenagem reforçado para chuvas intensas',
+            'Cobertura com isolamento térmico para conforto climático'
           ]
         },
         {
-          id: 'edificio-comercial',
-          title: 'Edifício Comercial 15 Andares',
-          description: 'Estrutura em concreto armado para edifício comercial no centro empresarial da cidade',
-          category: 'Comercial',
-          location: 'Centro, São Paulo - SP',
-          area: '8.500m²',
-          year: '2023',
-          status: 'Em Execução',
-          tags: ['Concreto Armado', 'Grandes Vãos', 'Comercial', 'Centro'],
-          details: [
-            'Estrutura em concreto armado com 15 pavimentos',
-            'Fundação em estacas pré-moldadas',
-            'Lajes protendidas para redução de espessura',
-            'Sistema de contraventamento para estabilidade'
-          ]
-        },
-        {
-          id: 'galpao-industrial',
-          title: 'Galpão Industrial 5.000m²',
-          description: 'Estrutura metálica para galpão industrial com ponte rolante e sistema de ventilação',
+          id: 'galpao-mineracao',
+          title: 'Galpão de Apoio à Mineração',
+          description: 'Estrutura industrial para apoio às operações de mineração com capacidade para equipamentos pesados e estocagem',
           category: 'Industrial',
-          location: 'Campinas, SP',
-          area: '5.000m²',
-          year: '2022',
-          status: 'Concluído',
-          tags: ['Estrutura Metálica', 'Ponte Rolante', 'Industrial', 'Grande Vão'],
+          location: 'Parauapebas, PA',
+          area: '3.500m²',
+          year: '2024',
+          status: 'Em Execução',
+          tags: ['Estrutura Metálica', 'Mineração', 'Equipamentos Pesados', 'Grande Vão'],
           details: [
-            'Estrutura metálica em aço galvanizado',
-            'Fundação em blocos de concreto armado',
-            'Cobertura em telhas termoacústicas',
-            'Sistema para ponte rolante de 10 toneladas'
+            'Estrutura metálica galvanizada resistente à corrosão',
+            'Fundação em blocos para cargas de equipamentos pesados',
+            'Pé-direito de 12 metros para movimentação de cargas',
+            'Sistema de ventilação natural adequado ao clima'
           ]
         },
         {
-          id: 'ponte-rodoviaria',
-          title: 'Ponte Rodoviária 150m',
-          description: 'Projeto estrutural de ponte rodoviária sobre rio com 150 metros de extensão',
-          category: 'Infraestrutura',
-          location: 'Interior de SP',
-          area: '150m extensão',
-          year: '2022',
-          status: 'Concluído',
-          tags: ['Concreto Protendido', 'Ponte', 'Infraestrutura', 'Vigas Pré-moldadas'],
-          details: [
-            'Estrutura em concreto protendido',
-            'Vigas pré-moldadas protendidas',
-            'Aparelhos de apoio em elastômero',
-            'Sistema de drenagem integrado'
-          ]
-        },
-        {
-          id: 'escola-tecnica',
-          title: 'Escola Técnica 3 Pavimentos',
-          description: 'Complexo educacional com laboratórios, salas de aula e área administrativa',
+          id: 'escola-municipal',
+          title: 'Escola Municipal CRAS',
+          description: 'Complexo educacional municipal com salas de aula, laboratório de informática e área administrativa',
           category: 'Educacional',
-          location: 'Santos, SP',
-          area: '2.800m²',
-          year: '2023',
-          status: 'Em Projeto',
-          tags: ['Educacional', 'Laboratórios', 'Concreto Armado', 'Sustentável'],
+          location: 'Canaã dos Carajás, PA',
+          area: '1.200m²',
+          year: '2024',
+          status: 'Concluído',
+          tags: ['Obra Pública', 'Educacional', 'Concreto Armado', 'Acessibilidade'],
           details: [
             'Estrutura em concreto armado convencional',
-            'Fundação em sapatas corridas',
-            'Lajes maciças para cargas de laboratório',
-            'Sistema de coleta de água da chuva'
+            'Fundação em sapatas isoladas',
+            'Cobertura em telhas termoacústicas',
+            'Rampas de acessibilidade e banheiros adaptados'
           ]
         },
         {
-          id: 'hospital-regional',
-          title: 'Hospital Regional 200 Leitos',
-          description: 'Centro médico com tecnologia avançada, UTIs e centro cirúrgico',
-          category: 'Hospitalar',
-          location: 'Ribeirão Preto, SP',
-          area: '12.000m²',
+          id: 'ponte-rural',
+          title: 'Ponte Rural - Acesso Mineração',
+          description: 'Ponte de concreto para acesso rural e apoio às operações de transporte da região de mineração',
+          category: 'Infraestrutura',
+          location: 'Região de Carajás, PA',
+          area: '45m extensão',
+          year: '2023',
+          status: 'Concluído',
+          tags: ['Concreto Armado', 'Ponte', 'Transporte Rural', 'Mineração'],
+          details: [
+            'Estrutura em concreto armado moldado in loco',
+            'Fundação em estacas pré-moldadas',
+            'Guarda-corpo em concreto armado',
+            'Drenagem integrada para período chuvoso'
+          ]
+        },
+        {
+          id: 'centro-comercial',
+          title: 'Centro Comercial Carajás',
+          description: 'Complexo comercial com lojas, restaurantes e área de serviços para atender o crescimento urbano',
+          category: 'Comercial',
+          location: 'Canaã dos Carajás, PA',
+          area: '2.800m²',
           year: '2024',
           status: 'Em Projeto',
-          tags: ['Hospitalar', 'UTI', 'Centro Cirúrgico', 'Tecnologia Médica'],
+          tags: ['Comercial', 'Concreto Armado', 'Multi-uso', 'Urbano'],
           details: [
-            'Estrutura com requisitos sísmicos especiais',
-            'Fundação profunda em estacas escavadas',
-            'Lajes com sistemas de isolamento de vibrações',
-            'Infraestrutura para equipamentos médicos pesados'
+            'Estrutura em concreto armado de 2 pavimentos',
+            'Fundação em sapatas isoladas',
+            'Lajes maciças para flexibilidade de layout',
+            'Sistema de combate a incêndio e segurança'
+          ]
+        },
+        {
+          id: 'habitacao-social',
+          title: 'Conjunto Habitacional Social',
+          description: 'Projeto habitacional social para atender famílias de baixa renda com parceria da Secretaria Municipal',
+          category: 'Habitacional',
+          location: 'Canaã dos Carajás, PA',
+          area: '4.500m² (50 casas)',
+          year: '2024',
+          status: 'Em Projeto',
+          tags: ['Habitação Social', 'Parceria Municipal', 'Sustentável', 'Baixo Custo'],
+          details: [
+            'Casas de 45m² com estrutura em alvenaria estrutural',
+            'Fundação em radier econômico',
+            'Cobertura em telhas cerâmicas regionais',
+            'Sistema de aproveitamento de água de chuva'
           ]
         }
       ]
@@ -359,7 +359,7 @@ export default {
         'Industrial': '🏭',
         'Infraestrutura': '🌉',
         'Educacional': '🏫',
-        'Hospitalar': '🏥',
+        'Habitacional': '🏘️',
         'Esportivo': '🏟️'
       }
       return icons[category] || '🏗️'
@@ -388,8 +388,8 @@ export default {
     },
     
     openWhatsApp() {
-      const message = encodeURIComponent('Olá! Gostaria de mais informações sobre os projetos de engenharia.')
-      window.open(`https://wa.me/5511999999999?text=${message}`, '_blank')
+      const message = encodeURIComponent('Olá! Gostaria de mais informações sobre os projetos de engenharia na região de Canaã dos Carajás.')
+      window.open(`https://wa.me/5594999999999?text=${message}`, '_blank')
     }
   }
 }

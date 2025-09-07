@@ -12,68 +12,109 @@
   body {
     @apply font-sans text-gray-900 antialiased;
   }
+  
+  /* Modern focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-wine-500 ring-offset-2 ring-offset-white;
+  }
 }
 
 @layer components {
-  /* Headings */
+  /* Enhanced Headings with Better Typography */
   .heading-xl { 
-    @apply text-5xl font-bold font-heading text-wine-900; 
+    @apply text-5xl md:text-6xl font-bold font-heading text-wine-900 leading-tight tracking-tight; 
   }
   
   .heading-lg { 
-    @apply text-4xl font-bold font-heading text-wine-900; 
+    @apply text-4xl md:text-5xl font-bold font-heading text-wine-900 leading-tight tracking-tight; 
   }
   
   .heading-md { 
-    @apply text-3xl font-semibold font-heading text-wine-900; 
+    @apply text-3xl md:text-4xl font-semibold font-heading text-wine-900 leading-snug; 
   }
   
   .heading-sm { 
-    @apply text-2xl font-semibold font-heading text-wine-900; 
+    @apply text-2xl md:text-3xl font-semibold font-heading text-wine-900 leading-snug; 
   }
 
-  /* Body Text */
+  /* Enhanced Body Text with Better Readability */
   .body-lg { 
-    @apply text-lg font-normal text-gray-900; 
+    @apply text-lg md:text-xl font-normal text-gray-900 leading-relaxed; 
   }
   
   .body-md { 
-    @apply text-base font-normal text-gray-900; 
+    @apply text-base md:text-lg font-normal text-gray-900 leading-relaxed; 
   }
   
   .body-sm { 
-    @apply text-sm font-normal text-gray-700; 
+    @apply text-sm md:text-base font-normal text-gray-700 leading-relaxed; 
   }
 
-  /* Company Name */
+  /* Company Name with Enhanced Styling */
   .company-name { 
-    @apply text-primary-500 font-bold; 
+    @apply text-primary-500 font-bold bg-gradient-to-r from-primary-500 to-wine-900 bg-clip-text text-transparent; 
   }
 
-  /* Utilities */
+  /* Enhanced Text Gradient */
   .text-gradient { 
-    @apply bg-gradient-to-r from-primary-500 to-wine-900 bg-clip-text text-transparent; 
+    @apply bg-gradient-to-r from-primary-500 via-wine-600 to-wine-900 bg-clip-text text-transparent; 
   }
   
+  /* Modern Button Styles with Enhanced States */
   .btn-primary { 
-    @apply bg-wine-900 hover:bg-wine-800 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-wine-700 focus:ring-offset-2; 
+    @apply bg-gradient-to-r from-wine-900 to-wine-800 hover:from-wine-800 hover:to-wine-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-wine-700 focus:ring-offset-2 transform hover:scale-105 hover:shadow-lg active:scale-95; 
   }
   
   .btn-secondary { 
-    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2; 
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transform hover:scale-105 hover:shadow-lg active:scale-95; 
   }
   
   .btn-outline { 
-    @apply border-2 border-wine-900 text-wine-900 hover:bg-wine-900 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-wine-700 focus:ring-offset-2; 
+    @apply border-2 border-wine-900 text-wine-900 hover:bg-wine-900 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-wine-700 focus:ring-offset-2 transform hover:scale-105 hover:shadow-medium active:scale-95; 
+  }
+  
+  .btn-ghost {
+    @apply text-wine-900 hover:bg-wine-50 font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-wine-700 focus:ring-offset-2 hover:shadow-soft;
   }
 
-  /* Card Components */
+  /* Enhanced Card Components with Modern Effects */
   .card { 
-    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100; 
+    @apply bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 border border-gray-100 backdrop-blur-sm; 
   }
   
   .card-hover { 
-    @apply transform hover:-translate-y-1 transition-transform duration-300; 
+    @apply transform hover:-translate-y-2 transition-all duration-300 hover:shadow-large; 
+  }
+  
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-md rounded-2xl shadow-glass border border-white/20;
+  }
+  
+  /* Interactive Elements with Micro-animations */
+  .interactive {
+    @apply transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+  
+  .floating {
+    @apply animate-float;
+  }
+  
+  /* Enhanced Input Styles */
+  .input-modern {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-wine-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm;
+  }
+  
+  /* Status Indicators */
+  .status-success {
+    @apply bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .status-warning {
+    @apply bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .status-info {
+    @apply bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium;
   }
 }
 
@@ -84,5 +125,46 @@
   
   .section-padding {
     @apply py-16 lg:py-24;
+  }
+  
+  /* Modern Spacing Utilities */
+  .space-y-micro > * + * {
+    @apply mt-1;
+  }
+  
+  .space-y-mini > * + * {
+    @apply mt-2;
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-wine-900 via-wine-800 to-primary-500;
+  }
+  
+  .bg-gradient-subtle {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100;
+  }
+  
+  /* Modern Border Radius */
+  .rounded-modern {
+    @apply rounded-2xl;
+  }
+  
+  .rounded-large {
+    @apply rounded-3xl;
+  }
+  
+  /* Text Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Glass Effect Utilities */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-md border border-white/10;
   }
 }

@@ -214,19 +214,19 @@ export default {
         "name": "Quartzo Engenharia",
         "description": "Empresa especializada em projetos estruturais, consultoria técnica e gerenciamento de obras",
         "url": window.location.origin,
-        "telephone": "+55-11-99999-9999",
+        "telephone": "+55-94-99999-9999",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Rua da Engenharia, 123",
-          "addressLocality": "São Paulo",
-          "addressRegion": "SP",
-          "postalCode": "01000-000",
+          "streetAddress": "Avenida Eliezer Batista, 456",
+          "addressLocality": "Canaã dos Carajás",
+          "addressRegion": "PA",
+          "postalCode": "68537-000",
           "addressCountry": "BR"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "-23.5505",
-          "longitude": "-46.6333"
+          "latitude": "-6.4958",
+          "longitude": "-49.8761"
         },
         "openingHours": [
           "Mo-Fr 08:00-18:00",
@@ -291,11 +291,11 @@ export default {
       meta: [
         {
           name: 'description',
-          content: 'Empresa especializada em projetos estruturais, consultoria técnica e gerenciamento de obras. Mais de 10 anos de experiência em engenharia civil. Solicite seu orçamento gratuito.'
+          content: 'Empresa especializada em projetos estruturais, consultoria técnica e gerenciamento de obras em Canaã dos Carajás, Pará. Experiência em projetos para mineração, infraestrutura e construção civil. Solicite seu orçamento gratuito.'
         },
         {
           name: 'keywords',
-          content: 'engenharia civil, projeto estrutural, consultoria técnica, São Paulo, CREA, construção civil, estruturas, concreto armado'
+          content: 'engenharia civil, projeto estrutural, consultoria técnica, Canaã dos Carajás, Pará, CREA-PA, construção civil, estruturas, concreto armado, mineração, infraestrutura'
         },
         {
           name: 'author',
@@ -311,7 +311,7 @@ export default {
         },
         {
           property: 'og:description',
-          content: 'Especialistas em projetos estruturais, consultoria técnica e soluções completas para engenharia civil. Orçamento gratuito.'
+          content: 'Especialistas em projetos estruturais, consultoria técnica e soluções completas para engenharia civil em Canaã dos Carajás, Pará. Expertise em mineração e infraestrutura. Orçamento gratuito.'
         },
         {
           property: 'og:type',
@@ -335,7 +335,7 @@ export default {
         },
         {
           name: 'twitter:description',
-          content: 'Especialistas em engenharia civil com mais de 10 anos de experiência. Projetos estruturais seguros e funcionais.'
+          content: 'Especialistas em engenharia civil em Canaã dos Carajás, Pará. Projetos estruturais seguros e funcionais com foco em mineração e infraestrutura regional.'
         }
       ]
     }

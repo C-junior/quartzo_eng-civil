@@ -34,13 +34,13 @@
                   <h3 class="font-semibold text-gray-900 mb-2">Telefone</h3>
                   <div class="space-y-1">
                     <p class="text-gray-600">
-                      <a href="tel:+551199999999" class="hover:text-wine-900 transition-colors">
-                        (11) 99999-9999
+                      <a href="tel:+559499999999" class="hover:text-wine-900 transition-colors">
+                        (94) 99999-9999
                       </a>
                     </p>
                     <p class="text-gray-600">
-                      <a href="tel:+551133334444" class="hover:text-wine-900 transition-colors">
-                        (11) 3333-4444
+                      <a href="tel:+559433334444" class="hover:text-wine-900 transition-colors">
+                        (94) 3333-4444
                       </a>
                     </p>
                   </div>
@@ -83,9 +83,9 @@
                 <div class="flex-1">
                   <h3 class="font-semibold text-gray-900 mb-2">Endereço</h3>
                   <div class="text-gray-600">
-                    <p>Rua da Engenharia, 123</p>
-                    <p>Centro, São Paulo - SP</p>
-                    <p>CEP: 01000-000</p>
+                    <p>Avenida Eliezer Batista, 456</p>
+                    <p>Centro, Canaã dos Carajás - PA</p>
+                    <p>CEP: 68537-000</p>
                   </div>
                   <p class="text-sm text-gray-500 mt-2">Atendimento presencial</p>
                 </div>
@@ -157,7 +157,8 @@
             <div class="text-center space-y-4">
               <div class="text-6xl">🗺️</div>
               <div class="text-xl font-medium">Localização</div>
-              <div class="text-sm opacity-75">Rua da Engenharia, 123 - Centro, São Paulo</div>
+              <div class="text-sm opacity-75">Avenida Eliezer Batista, 456</div>
+              <div class="text-sm opacity-75">Centro, Canaã dos Carajás - Pará</div>
               <BaseButton
                 variant="secondary"
                 size="md"
@@ -219,8 +220,8 @@ export default {
           answer: 'Oferecemos o serviço de aprovação como adicional. Cuidamos de toda a documentação necessária para aprovação na prefeitura e outros órgãos.'
         },
         {
-          question: 'Atendem projetos em outras cidades?',
-          answer: 'Sim! Atendemos projetos em todo o estado de São Paulo e regiões próximas. Para outras localidades, consulte nossa disponibilidade.'
+          question: 'Atendem projetos em outras cidades da região?',
+          answer: 'Sim! Atendemos projetos em todo o estado do Pará e regiões próximas. Para outras localidades, consulte nossa disponibilidade.'
         },
         {
           question: 'Qual é a forma de pagamento?',
@@ -236,13 +237,13 @@ export default {
   methods: {
     openWhatsApp() {
       const message = encodeURIComponent(
-        'Olá! Vim através do site e gostaria de mais informações sobre os serviços de engenharia.'
+        'Olá! Vim através do site da Quartzo Engenharia e gostaria de mais informações sobre os serviços de engenharia civil.'
       )
-      window.open(`https://wa.me/5511999999999?text=${message}`, '_blank')
+      window.open(`https://wa.me/5594999999999?text=${message}`, '_blank')
     },
     
     openMaps() {
-      const address = encodeURIComponent('Rua da Engenharia, 123, Centro, São Paulo, SP')
+      const address = encodeURIComponent('Avenida Eliezer Batista, 456, Centro, Canaã dos Carajás, Pará')
       window.open(`https://www.google.com/maps/search/${address}`, '_blank')
     }
   }

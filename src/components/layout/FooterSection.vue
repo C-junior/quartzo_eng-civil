@@ -6,8 +6,12 @@
         <!-- Company Info -->
         <div class="lg:col-span-2">
           <div class="flex items-center space-x-3 mb-6">
-            <div class="w-10 h-10 bg-gradient-to-br from-wine-900 to-primary-500 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold text-xl">Q</span>
+            <div class="w-10 h-10 rounded-lg overflow-hidden">
+              <img 
+                src="@/assets/images/quartzo-logo.png" 
+                alt="Quartzo Engenharia Logo" 
+                class="w-full h-full object-contain bg-white p-1 rounded-lg"
+              />
             </div>
             <div>
               <h3 class="text-2xl font-bold">
@@ -18,7 +22,7 @@
           </div>
           
           <p class="text-gray-300 mb-6 max-w-md">
-            Especialistas em projetos estruturais, consultoria técnica e soluções completas para engenharia civil. 
+            Especialistas em projetos estruturais, consultoria técnica e soluções completas para engenharia civil em Canaã dos Carajás, Pará. 
             Qualidade, segurança e inovação em cada projeto.
           </p>
           
@@ -74,9 +78,9 @@
             <div>
               <h5 class="font-semibold mb-1">Endereço</h5>
               <p class="text-gray-300 text-sm">
-                Rua da Engenharia, 123<br>
-                Centro, São Paulo - SP<br>
-                CEP: 01000-000
+                Avenida Eliezer Batista, 456<br>
+                Centro, Canaã dos Carajás - PA<br>
+                CEP: 68537-000
               </p>
             </div>
           </div>
@@ -89,13 +93,13 @@
             <div>
               <h5 class="font-semibold mb-1">Telefone</h5>
               <p class="text-gray-300 text-sm">
-                <a href="tel:+551199999999" class="hover:text-white transition-colors">
-                  (11) 99999-9999
+                <a href="tel:+559499999999" class="hover:text-white transition-colors">
+                  (94) 99999-9999
                 </a>
               </p>
               <p class="text-gray-300 text-sm">
-                <a href="tel:+551133334444" class="hover:text-white transition-colors">
-                  (11) 3333-4444
+                <a href="tel:+559433334444" class="hover:text-white transition-colors">
+                  (94) 3333-4444
                 </a>
               </p>
             </div>
@@ -127,8 +131,8 @@
       <div class="border-t border-gray-800 py-6">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
           <div class="text-sm text-gray-300">
-            <p><strong>CREA-SP:</strong> 123.456.789</p>
-            <p><strong>Engenheiro Responsável:</strong> João Silva, Eng. Civil</p>
+            <p><strong>CREA-PA:</strong> Registro em processo</p>
+            <p><strong>Engenheiro Responsável:</strong> Erick Antonio, Eng. Civil</p>
           </div>
           
           <div class="flex space-x-6 text-sm text-gray-300">
@@ -158,7 +162,7 @@ export default {
         { name: 'LinkedIn', icon: '💼', href: '#' },
         { name: 'Instagram', icon: '📸', href: '#' },
         { name: 'Facebook', icon: '📘', href: '#' },
-        { name: 'WhatsApp', icon: '💬', href: 'https://wa.me/5511999999999' }
+        { name: 'WhatsApp', icon: '💬', href: 'https://wa.me/5594999999999' }
       ],
       quickLinks: [
         { name: 'Início', href: '#hero' },

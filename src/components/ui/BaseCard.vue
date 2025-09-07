@@ -1,14 +1,17 @@
 <template>
   <div :class="cardClasses">
-    <div v-if="$slots.header" class="px-6 py-4 border-b border-gray-200">
+    <!-- Header Slot -->
+    <div v-if="$slots.header" :class="headerClasses">
       <slot name="header"></slot>
     </div>
     
+    <!-- Main Content -->
     <div :class="bodyClasses">
       <slot></slot>
     </div>
     
-    <div v-if="$slots.footer" class="px-6 py-4 border-t border-gray-200 bg-gray-50">
+    <!-- Footer Slot -->
+    <div v-if="$slots.footer" :class="footerClasses">
       <slot name="footer"></slot>
     </div>
   </div>
@@ -21,7 +24,7 @@ export default {
     variant: {
       type: String,
       default: 'default',
-      validator: (value) => ['default', 'elevated', 'outlined', 'flat'].includes(value)
+      validator: (value) => ['default', 'elevated', 'outlined', 'flat', 'glass', 'gradient'].includes(value)
     },
     hover: {
       type: Boolean,
@@ -30,21 +33,101 @@ export default {
     padding: {
       type: String,
       default: 'default',
-      validator: (value) => ['none', 'sm', 'default', 'lg'].includes(value)
+      validator: (value) => ['none', 'xs', 'sm', 'default', 'lg', 'xl'].includes(value)
+    },
+    rounded: {
+      type: String,
+      default: 'xl',
+      validator: (value) => ['none', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'].includes(value)
+    },
+    interactive: {
+      type: Boolean,
+      default: false
+    },
+    border: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
     cardClasses() {
-      const base = ['bg-white', 'rounded-xl', 'transition-all', 'duration-300']
+      const base = ['transition-all', 'duration-300', 'ease-out']
       
+      // Border radius
+      const roundedClasses = {
+        none: 'rounded-none',
+        sm: 'rounded-sm',
+        md: 'rounded-md',
+        lg: 'rounded-lg',
+        xl: 'rounded-xl',
+        '2xl': 'rounded-2xl',
+        '3xl': 'rounded-3xl'
+      }
+      base.push(roundedClasses[this.rounded])
+      
+      // Variant styles with modern effects
       const variants = {
-        default: ['shadow-lg', 'border', 'border-gray-100'],
-        elevated: ['shadow-xl', 'border', 'border-gray-100'],
-        outlined: ['border-2', 'border-gray-200', 'shadow-sm'],
-        flat: ['shadow-none', 'border', 'border-gray-100']
+        default: [
+          'bg-white',
+          'shadow-soft',
+          ...(this.border ? ['border', 'border-gray-100'] : [])
+        ],
+        elevated: [
+          'bg-white',
+          'shadow-large',
+          ...(this.border ? ['border', 'border-gray-100'] : [])
+        ],
+        outlined: [
+          'bg-white',
+          'border-2',
+          'border-gray-200',
+          'shadow-soft'
+        ],
+        flat: [
+          'bg-white',
+          'shadow-none',
+          ...(this.border ? ['border', 'border-gray-100'] : [])
+        ],
+        glass: [
+          'bg-white/80',
+          'backdrop-blur-md',
+          'shadow-glass',
+          'border',
+          'border-white/20'
+        ],
+        gradient: [
+          'bg-gradient-to-br',
+          'from-white',
+          'to-gray-50',
+          'shadow-medium',
+          ...(this.border ? ['border', 'border-gray-100'] : [])
+        ]
       }
       
-      const hoverClasses = this.hover ? ['hover:shadow-xl', 'hover:-translate-y-1'] : []
+      // Hover effects
+      const hoverClasses = []
+      if (this.hover || this.interactive) {
+        hoverClasses.push(
+          'hover:shadow-large',
+          'hover:-translate-y-2',
+          'cursor-pointer'
+        )
+        
+        if (this.variant === 'glass') {
+          hoverClasses.push('hover:bg-white/90')
+        }
+      }
+      
+      // Interactive states
+      if (this.interactive) {
+        hoverClasses.push(
+          'active:scale-98',
+          'focus:outline-none',
+          'focus-visible:ring-2',
+          'focus-visible:ring-wine-500',
+          'focus-visible:ring-offset-2'
+        )
+      }
       
       return [
         ...base,
@@ -56,12 +139,47 @@ export default {
     bodyClasses() {
       const paddingClasses = {
         none: [],
+        xs: ['p-2'],
         sm: ['p-4'],
         default: ['p-6'],
-        lg: ['p-8']
+        lg: ['p-8'],
+        xl: ['p-10']
       }
       
       return paddingClasses[this.padding]
+    },
+    
+    headerClasses() {
+      const basePadding = this.padding === 'none' ? 'px-6 py-4' : 
+                         this.padding === 'xs' ? 'px-2 pt-2 pb-1' :
+                         this.padding === 'sm' ? 'px-4 py-3' :
+                         this.padding === 'default' ? 'px-6 py-4' :
+                         this.padding === 'lg' ? 'px-8 py-5' :
+                         'px-10 py-6'
+      
+      return [
+        basePadding,
+        'border-b',
+        'border-gray-200/60',
+        'backdrop-blur-sm'
+      ]
+    },
+    
+    footerClasses() {
+      const basePadding = this.padding === 'none' ? 'px-6 py-4' : 
+                         this.padding === 'xs' ? 'px-2 pt-1 pb-2' :
+                         this.padding === 'sm' ? 'px-4 py-3' :
+                         this.padding === 'default' ? 'px-6 py-4' :
+                         this.padding === 'lg' ? 'px-8 py-5' :
+                         'px-10 py-6'
+      
+      return [
+        basePadding,
+        'border-t',
+        'border-gray-200/60',
+        'bg-gray-50/50',
+        'backdrop-blur-sm'
+      ]
     }
   }
 }
