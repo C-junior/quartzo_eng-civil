@@ -98,8 +98,19 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="member in teamMembers" :key="member.name" class="text-center">
-            <div class="bg-gradient-to-br from-wine-900 to-primary-500 rounded-2xl w-32 h-32 mx-auto mb-4 flex items-center justify-center text-white text-4xl">
-              {{ member.avatar }}
+            <div class="w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden">
+              <img 
+                v-if="member.photo" 
+                :src="member.photo" 
+                :alt="member.name"
+                class="w-full h-full object-cover"
+              />
+              <div 
+                v-else 
+                class="bg-gradient-to-br from-wine-900 to-primary-500 rounded-2xl w-full h-full flex items-center justify-center text-white text-4xl"
+              >
+                {{ member.avatar }}
+              </div>
             </div>
             <h4 class="font-semibold text-gray-900 mb-1">{{ member.name }}</h4>
             <p class="text-primary-600 font-medium text-sm mb-2">{{ member.role }}</p>
@@ -171,7 +182,8 @@ export default {
           name: 'Erick Antonio',
           role: 'Engenheiro Civil - Fundador',
           description: 'Especialista em obras públicas e residenciais, graduado em 2021 no Tocantins com experiência em projetos municipais',
-          avatar: '👨‍💼'
+          avatar: '👨‍💼',
+          photo: '/src/assets/images/erick.png'
         }
       ],
       
