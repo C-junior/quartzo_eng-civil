@@ -42,7 +42,12 @@
             <div class="space-y-4">
               <div v-for="advantage in advantages" :key="advantage.title" class="flex items-start space-x-4">
                 <div class="w-8 h-8 bg-wine-900 text-white rounded-lg flex items-center justify-center text-sm mt-1">
-                  {{ advantage.icon }}
+                  <IconWrapper 
+                    :name="advantage.icon" 
+                    size="sm" 
+                    variant="white"
+                    :aria-label="advantage.title"
+                  />
                 </div>
                 <div>
                   <h4 class="font-semibold text-gray-900 mb-1">{{ advantage.title }}</h4>
@@ -89,7 +94,12 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div v-for="cert in certifications" :key="cert.name" class="flex flex-col items-center space-y-3">
             <div class="w-16 h-16 bg-gradient-to-br from-wine-900 to-primary-500 rounded-xl flex items-center justify-center text-white text-2xl">
-              {{ cert.icon }}
+              <IconWrapper 
+                :name="cert.icon" 
+                size="lg" 
+                variant="white"
+                :aria-label="cert.name"
+              />
             </div>
             <div class="text-center">
               <div class="font-semibold text-gray-900 text-sm">{{ cert.name }}</div>
@@ -106,33 +116,35 @@
 import { useMainStore } from '@/stores/main'
 import ServiceCard from './ServiceCard.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
+import IconWrapper from '@/components/ui/IconWrapper.vue'
 
 export default {
   name: 'ServicesSection',
   components: {
     ServiceCard,
-    BaseButton
+    BaseButton,
+    IconWrapper
   },
   data() {
     return {
       advantages: [
         {
-          icon: '🎯',
+          icon: 'target',
           title: 'Expertise Técnica',
           description: 'Mais de 10 anos de experiência em projetos estruturais complexos'
         },
         {
-          icon: '⚡',
+          icon: 'zap',
           title: 'Agilidade na Entrega',
           description: 'Cumprimento rigoroso de prazos sem comprometer a qualidade'
         },
         {
-          icon: '🔒',
+          icon: 'shield',
           title: 'Segurança Garantida',
           description: 'Todos os projetos seguem as normas técnicas e de segurança'
         },
         {
-          icon: '💎',
+          icon: 'gem',
           title: 'Qualidade Premium',
           description: 'Padrão de excelência em cada detalhe do projeto'
         }
@@ -147,22 +159,22 @@ export default {
       
       certifications: [
         {
-          icon: '📋',
+          icon: 'clipboard-list',
           name: 'CREA-PA',
           description: 'Registro Ativo'
         },
         {
-          icon: '🏆',
+          icon: 'award',
           name: 'ISO 9001',
           description: 'Qualidade Certificada'
         },
         {
-          icon: '✅',
+          icon: 'check-circle',
           name: 'CAU',
           description: 'Habilitação Técnica'
         },
         {
-          icon: '🛡️',
+          icon: 'shield',
           name: 'Segurança',
           description: 'NR-18 Certificada'
         }

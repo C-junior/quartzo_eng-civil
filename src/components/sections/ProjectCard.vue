@@ -5,7 +5,12 @@
       <!-- Placeholder for project image -->
       <div class="w-full h-full flex items-center justify-center text-white">
         <div class="text-center space-y-2">
-          <div class="text-4xl">{{ getCategoryIcon(project.category) }}</div>
+          <IconWrapper 
+            :name="getCategoryIcon(project.category)" 
+            size="2xl" 
+            variant="white"
+            :aria-label="project.category"
+          />
           <div class="text-sm opacity-75">{{ project.category }}</div>
         </div>
       </div>
@@ -78,12 +83,14 @@
 <script>
 import BaseCard from '@/components/ui/BaseCard.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
+import IconWrapper from '@/components/ui/IconWrapper.vue'
 
 export default {
   name: 'ProjectCard',
   components: {
     BaseCard,
-    BaseButton
+    BaseButton,
+    IconWrapper
   },
   props: {
     project: {
@@ -98,15 +105,15 @@ export default {
   methods: {
     getCategoryIcon(category) {
       const icons = {
-        'Residencial': '🏠',
-        'Comercial': '🏢',
-        'Industrial': '🏭',
-        'Infraestrutura': '🌉',
-        'Educacional': '🏫',
-        'Hospitalar': '🏥',
-        'Esportivo': '🏟️'
+        'Residencial': 'home',
+        'Comercial': 'building-2',
+        'Industrial': 'factory',
+        'Infraestrutura': 'bridge',
+        'Educacional': 'building',
+        'Hospitalar': 'building',
+        'Esportivo': 'building'
       }
-      return icons[category] || '🏗️'
+      return icons[category] || 'building'
     },
     
     viewDetails() {

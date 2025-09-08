@@ -6,6 +6,56 @@ export const useMainStore = defineStore('main', {
     isMobileMenuOpen: false,
     isLoading: false,
     
+    // Icon Registry
+    iconMap: {
+      contact: {
+        whatsapp: 'message-circle',
+        phone: 'phone',
+        email: 'mail',
+        send: 'send'
+      },
+      achievements: {
+        certified: 'award',
+        verified: 'check-circle',
+        secure: 'shield',
+        quality: 'gem',
+        speed: 'zap'
+      },
+      projects: {
+        residential: 'home',
+        commercial: 'building-2',
+        industrial: 'factory',
+        infrastructure: 'bridge',
+        default: 'building'
+      },
+      certifications: {
+        crea: 'clipboard-list',
+        iso: 'award',
+        cau: 'check-circle',
+        safety: 'shield',
+        sustainability: 'leaf',
+        security: 'lock',
+        excellence: 'star',
+        professional: 'briefcase'
+      },
+      social: {
+        linkedin: 'briefcase',
+        instagram: 'camera',
+        facebook: 'briefcase',
+        whatsapp: 'message-circle'
+      },
+      mission: {
+        mission: 'target',
+        vision: 'eye',
+        values: 'gem'
+      },
+      stats: {
+        projects: 'rocket',
+        satisfaction: 'star',
+        support: 'message-circle'
+      }
+    },
+    
     // Contact Form
     contactForm: {
       name: '',
@@ -26,28 +76,28 @@ export const useMainStore = defineStore('main', {
         id: 'projeto-estrutural',
         title: 'Projeto Estrutural',
         description: 'Dimensionamento e cálculo de estruturas para obras residenciais e comerciais',
-        icon: '🏗️',
+        icon: 'building',
         features: ['Fundações', 'Pilares e Vigas', 'Lajes', 'Estruturas de Concreto']
       },
       {
         id: 'consultoria-tecnica',
         title: 'Consultoria Técnica',
         description: 'Assessoria especializada em projetos de engenharia civil e orçamentos',
-        icon: '📊',
+        icon: 'chart-bar',
         features: ['Análise de Projetos', 'Elaboração de Orçamentos', 'Vistorias Técnicas', 'Pareceres']
       },
       {
         id: 'obras-publicas',
         title: 'Obras Públicas',
         description: 'Experiência em projetos municipais e habitação social',
-        icon: '🏢',
+        icon: 'building-2',
         features: ['Secretaria de Habitação', 'Escolas', 'CRAS', 'Projetos Municipais']
       },
       {
         id: 'projetos-comerciais',
         title: 'Projetos Comerciais',
         description: 'Galpões comerciais e projetos residenciais personalizados',
-        icon: '🏢',
+        icon: 'building-2',
         features: ['Galpões Comerciais', 'Residenciais', 'Reforma e Ampliação', 'Licenciamento']
       }
     ],
@@ -110,6 +160,24 @@ export const useMainStore = defineStore('main', {
     
     getProjectsByCategory: (state) => (category) => {
       return state.projects.filter(project => project.category === category)
+    },
+    
+    getIconByCategory: (state) => (category, type) => {
+      return state.iconMap[category]?.[type] || 'help-circle'
+    }
+  },
+  
+  // Icon-related actions
+  iconActions: {
+    registerIcon(category, type, iconName) {
+      if (!this.iconMap[category]) {
+        this.iconMap[category] = {}
+      }
+      this.iconMap[category][type] = iconName
+    },
+    
+    getIconName(category, type) {
+      return this.getIconByCategory(category, type)
     }
   },
   

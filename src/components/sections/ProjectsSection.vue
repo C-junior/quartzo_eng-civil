@@ -99,7 +99,12 @@
         <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-wine-900 to-primary-500 rounded-lg overflow-hidden">
           <div class="flex items-center justify-center text-white">
             <div class="text-center space-y-4">
-              <div class="text-6xl">{{ getCategoryIcon(selectedProject.category) }}</div>
+              <IconWrapper 
+                :name="getCategoryIcon(selectedProject.category)" 
+                size="2xl" 
+                variant="white"
+                :aria-label="selectedProject.category"
+              />
               <div class="text-lg font-medium">{{ selectedProject.category }}</div>
             </div>
           </div>
@@ -123,7 +128,13 @@
             <h4 class="font-semibold text-gray-900 mb-2">Informações</h4>
             <div class="space-y-3">
               <div class="flex items-center text-sm">
-                <span class="w-5 h-5 mr-3 text-wine-900">📍</span>
+                <IconWrapper 
+                  name="map-pin" 
+                  size="sm" 
+                  variant="muted"
+                  :aria-label="'Localização'"
+                  class="mr-3"
+                />
                 <span class="font-medium mr-2">Local:</span>
                 <span class="text-gray-600">{{ selectedProject.location }}</span>
               </div>
@@ -182,13 +193,15 @@ import { useMainStore } from '@/stores/main'
 import ProjectCard from './ProjectCard.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseModal from '@/components/ui/BaseModal.vue'
+import IconWrapper from '@/components/ui/IconWrapper.vue'
 
 export default {
   name: 'ProjectsSection',
   components: {
     ProjectCard,
     BaseButton,
-    BaseModal
+    BaseModal,
+    IconWrapper
   },
   data() {
     return {
@@ -354,15 +367,15 @@ export default {
     
     getCategoryIcon(category) {
       const icons = {
-        'Residencial': '🏠',
-        'Comercial': '🏢',
-        'Industrial': '🏭',
-        'Infraestrutura': '🌉',
-        'Educacional': '🏫',
-        'Habitacional': '🏘️',
-        'Esportivo': '🏟️'
+        'Residencial': 'home',
+        'Comercial': 'building-2',
+        'Industrial': 'factory',
+        'Infraestrutura': 'bridge',
+        'Educacional': 'building',
+        'Habitacional': 'home',
+        'Esportivo': 'building'
       }
-      return icons[category] || '🏗️'
+      return icons[category] || 'building'
     },
     
     contactAboutProject() {

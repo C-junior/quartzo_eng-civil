@@ -6,7 +6,13 @@
       class="bg-accent-green bg-opacity-10 border border-accent-green text-accent-green px-4 py-3 rounded-lg"
     >
       <div class="flex items-center">
-        <span class="text-xl mr-3">✅</span>
+        <IconWrapper 
+          name="check-circle" 
+          size="md" 
+          variant="default"
+          :aria-label="'Sucesso'"
+          class="mr-3 text-green-600"
+        />
         <div>
           <p class="font-medium">Mensagem enviada com sucesso!</p>
           <p class="text-sm opacity-75">Entraremos em contato em breve.</p>
@@ -20,7 +26,13 @@
       class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg"
     >
       <div class="flex items-center">
-        <span class="text-xl mr-3">❌</span>
+        <IconWrapper 
+          name="alert-circle" 
+          size="md" 
+          variant="default"
+          :aria-label="'Erro'"
+          class="mr-3 text-red-600"
+        />
         <div>
           <p class="font-medium">Erro ao enviar mensagem</p>
           <p class="text-sm opacity-75">Verifique os dados e tente novamente.</p>
@@ -143,7 +155,13 @@
           @click="openWhatsApp"
           class="flex items-center justify-center"
         >
-          <span class="mr-2">💬</span>
+          <IconWrapper 
+            name="message-circle" 
+            size="sm" 
+            variant="muted"
+            :aria-label="'WhatsApp'"
+            class="mr-2"
+          />
           WhatsApp
         </BaseButton>
         
@@ -154,7 +172,13 @@
           @click="callPhone"
           class="flex items-center justify-center"
         >
-          <span class="mr-2">📞</span>
+          <IconWrapper 
+            name="phone" 
+            size="sm" 
+            variant="muted"
+            :aria-label="'Telefone'"
+            class="mr-2"
+          />
           Ligar Agora
         </BaseButton>
         
@@ -165,7 +189,13 @@
           @click="sendEmail"
           class="flex items-center justify-center"
         >
-          <span class="mr-2">✉️</span>
+          <IconWrapper 
+            name="mail" 
+            size="sm" 
+            variant="muted"
+            :aria-label="'E-mail'"
+            class="mr-2"
+          />
           E-mail
         </BaseButton>
       </div>
@@ -177,12 +207,14 @@
 import { useMainStore } from '@/stores/main'
 import BaseInput from '@/components/ui/BaseInput.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
+import IconWrapper from '@/components/ui/IconWrapper.vue'
 
 export default {
   name: 'ContactForm',
   components: {
     BaseInput,
-    BaseButton
+    BaseButton,
+    IconWrapper
   },
   data() {
     return {

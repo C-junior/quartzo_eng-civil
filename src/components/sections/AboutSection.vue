@@ -84,7 +84,12 @@
         <BaseCard v-for="pillar in companyPillars" :key="pillar.title" padding="lg" class="text-center">
           <div class="space-y-4">
             <div class="w-16 h-16 bg-gradient-to-br from-wine-900 to-primary-500 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto">
-              {{ pillar.icon }}
+              <IconWrapper 
+                :name="pillar.icon" 
+                size="xl" 
+                variant="white"
+                :aria-label="pillar.title"
+              />
             </div>
             <h3 class="heading-sm">{{ pillar.title }}</h3>
             <p class="body-md text-gray-600">{{ pillar.description }}</p>
@@ -109,7 +114,12 @@
                 v-else 
                 class="bg-gradient-to-br from-wine-900 to-primary-500 rounded-2xl w-full h-full flex items-center justify-center text-white text-4xl"
               >
-                {{ member.avatar }}
+                <IconWrapper 
+                  :name="member.avatar" 
+                  size="2xl" 
+                  variant="white"
+                  :aria-label="member.name"
+                />
               </div>
             </div>
             <h4 class="font-semibold text-gray-900 mb-1">{{ member.name }}</h4>
@@ -132,7 +142,12 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div v-for="certification in certifications" :key="certification.name" class="text-center">
             <div class="w-20 h-20 bg-gray-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
-              {{ certification.icon }}
+              <IconWrapper 
+                :name="certification.icon" 
+                size="xl" 
+                variant="muted"
+                :aria-label="certification.name"
+              />
             </div>
             <h4 class="font-semibold text-gray-900 text-sm mb-1">{{ certification.name }}</h4>
             <p class="text-gray-600 text-xs">{{ certification.description }}</p>
@@ -145,11 +160,13 @@
 
 <script>
 import BaseCard from '@/components/ui/BaseCard.vue'
+import IconWrapper from '@/components/ui/IconWrapper.vue'
 
 export default {
   name: 'AboutSection',
   components: {
-    BaseCard
+    BaseCard,
+    IconWrapper
   },
   data() {
     return {
@@ -161,17 +178,17 @@ export default {
       
       companyPillars: [
         {
-          icon: '🎯',
+          icon: 'target',
           title: 'Missão',
           description: 'Oferecer soluções em engenharia civil com excelência técnica, transparência e comprometimento, atuando na construção, consultoria e elaboração de orçamentos com foco na qualidade, segurança e plena satisfação dos clientes.'
         },
         {
-          icon: '👁️',
+          icon: 'eye',
           title: 'Visão',
           description: 'Ser referência regional em engenharia civil e consultoria técnica, reconhecida pela confiabilidade, inovação e impacto positivo nas obras que realizamos e nos projetos que orientamos.'
         },
         {
-          icon: '💎',
+          icon: 'gem',
           title: 'Valores',
           description: 'Ética e transparência: atuamos com integridade em todas as etapas do processo. Comprometimento com o cliente: buscamos sempre superar expectativas com soluções personalizadas. Qualidade técnica: utilizamos as melhores práticas da engenharia, com precisão e responsabilidade. Inovação e melhoria contínua: estamos sempre em evolução, acompanhando novas tecnologias e normas. Sustentabilidade: valorizamos o uso racional de recursos e práticas conscientes nas obras. Colaboração e respeito: valorizamos a equipe, os parceiros e todos os envolvidos em cada projeto.'
         }
@@ -182,49 +199,49 @@ export default {
           name: 'Erick Antonio',
           role: 'Engenheiro Civil - Fundador',
           description: 'Especialista em obras públicas e residenciais, graduado em 2021 no Tocantins com experiência em projetos municipais',
-          avatar: '👨‍💼',
+          avatar: 'user',
           photo: '/src/assets/images/erick.png'
         }
       ],
       
       certifications: [
         {
-          icon: '📋',
+          icon: 'clipboard-list',
           name: 'CREA-PA',
           description: 'Registro Ativo e Regularizado'
         },
         {
-          icon: '🏆',
+          icon: 'award',
           name: 'ISO 9001:2015',
           description: 'Sistema de Gestão da Qualidade'
         },
         {
-          icon: '✅',
+          icon: 'check-circle',
           name: 'CAU',
           description: 'Conselho de Arquitetura e Urbanismo'
         },
         {
-          icon: '🛡️',
+          icon: 'shield',
           name: 'ABNT',
           description: 'Normas Técnicas Brasileiras'
         },
         {
-          icon: '🌱',
+          icon: 'leaf',
           name: 'LEED',
           description: 'Construção Sustentável'
         },
         {
-          icon: '🔒',
+          icon: 'lock',
           name: 'NR-18',
           description: 'Segurança no Trabalho'
         },
         {
-          icon: '⭐',
+          icon: 'star',
           name: 'SINDUSCON',
           description: 'Sindicato da Construção Civil'
         },
         {
-          icon: '🎖️',
+          icon: 'briefcase',
           name: 'CONFEA',
           description: 'Conselho Federal de Engenharia'
         }

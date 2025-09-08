@@ -126,7 +126,12 @@
             <div class="absolute -top-6 -right-6 floating-card p-6 max-w-64 hidden lg:block animate-float">
               <div class="flex items-center space-x-4">
                 <div class="w-12 h-12 bg-gradient-to-r from-wine-600 to-primary-500 text-white rounded-xl flex items-center justify-center text-xl">
-                  ⚡
+                  <IconWrapper 
+                    name="zap" 
+                    size="lg" 
+                    variant="white"
+                    :aria-label="'Suporte 24/7'"
+                  />
                 </div>
                 <div>
                   <div class="font-bold text-gray-900">Suporte 24/7</div>
@@ -138,7 +143,12 @@
             <div class="absolute -bottom-6 -left-6 floating-card p-6 max-w-64 hidden lg:block animate-float" style="animation-delay: 1s;">
               <div class="flex items-center space-x-4">
                 <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-wine-800 text-white rounded-xl flex items-center justify-center text-xl">
-                  🎯
+                  <IconWrapper 
+                    name="target" 
+                    size="lg" 
+                    variant="white"
+                    :aria-label="'Taxa de Sucesso'"
+                  />
                 </div>
                 <div>
                   <div class="font-bold text-gray-900">Taxa de Sucesso 98%</div>
@@ -150,14 +160,24 @@
             <!-- Additional Floating Elements -->
             <div class="absolute top-1/4 -left-8 floating-card p-4 hidden xl:block animate-float" style="animation-delay: 2s;">
               <div class="text-center">
-                <div class="text-2xl">🏆</div>
+                <IconWrapper 
+                  name="award" 
+                  size="lg" 
+                  variant="muted"
+                  :aria-label="'Premiado'"
+                />
                 <div class="text-xs font-medium text-gray-700 mt-1">Premiado</div>
               </div>
             </div>
             
             <div class="absolute bottom-1/4 -right-8 floating-card p-4 hidden xl:block animate-float" style="animation-delay: 3s;">
               <div class="text-center">
-                <div class="text-2xl">🌱</div>
+                <IconWrapper 
+                  name="leaf" 
+                  size="lg" 
+                  variant="muted"
+                  :aria-label="'Sustentável'"
+                />
                 <div class="text-xs font-medium text-gray-700 mt-1">Sustentável</div>
               </div>
             </div>
@@ -183,11 +203,13 @@
 
 <script>
 import BaseButton from '@/components/ui/BaseButton.vue'
+import IconWrapper from '@/components/ui/IconWrapper.vue'
 
 export default {
   name: 'HeroSection',
   components: {
-    BaseButton
+    BaseButton,
+    IconWrapper
   },
   data() {
     return {
@@ -201,9 +223,9 @@ export default {
         'Soluções Sustentáveis'
       ],
       startupStats: [
-        { value: '50+', label: 'Projetos Entregues', icon: '🚀' },
-        { value: '98%', label: 'Satisfação do Cliente', icon: '⭐' },
-        { value: '24/7', label: 'Suporte Disponível', icon: '💬' }
+        { value: '50+', label: 'Projetos Entregues', icon: 'rocket' },
+        { value: '98%', label: 'Satisfação do Cliente', icon: 'star' },
+        { value: '24/7', label: 'Suporte Disponível', icon: 'message-circle' }
       ]
     }
   },

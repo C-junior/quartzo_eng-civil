@@ -35,7 +35,12 @@
               :aria-label="social.name"
               class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-wine-900 transition-colors duration-200"
             >
-              <span class="text-lg">{{ social.icon }}</span>
+              <IconWrapper 
+                :name="social.icon" 
+                size="sm" 
+                variant="white"
+                :aria-label="social.name"
+              />
             </a>
           </div>
         </div>
@@ -73,7 +78,12 @@
           <!-- Address -->
           <div class="flex items-start space-x-3">
             <div class="w-6 h-6 text-primary-500 mt-1">
-              📍
+              <IconWrapper 
+                name="map-pin" 
+                size="sm" 
+                variant="secondary"
+                :aria-label="'Endereço'"
+              />
             </div>
             <div>
               <h5 class="font-semibold mb-1">Endereço</h5>
@@ -88,7 +98,12 @@
           <!-- Phone -->
           <div class="flex items-start space-x-3">
             <div class="w-6 h-6 text-primary-500 mt-1">
-              📞
+              <IconWrapper 
+                name="phone" 
+                size="sm" 
+                variant="secondary"
+                :aria-label="'Telefone'"
+              />
             </div>
             <div>
               <h5 class="font-semibold mb-1">Telefone</h5>
@@ -108,7 +123,12 @@
           <!-- Email -->
           <div class="flex items-start space-x-3">
             <div class="w-6 h-6 text-primary-500 mt-1">
-              ✉️
+              <IconWrapper 
+                name="mail" 
+                size="sm" 
+                variant="secondary"
+                :aria-label="'E-mail'"
+              />
             </div>
             <div>
               <h5 class="font-semibold mb-1">E-mail</h5>
@@ -136,9 +156,33 @@
           </div>
           
           <div class="flex space-x-6 text-sm text-gray-300">
-            <span>🏆 Certificação ISO 9001</span>
-            <span>✅ Registro CREA</span>
-            <span>📋 CAU Ativo</span>
+            <span class="flex items-center space-x-1">
+              <IconWrapper 
+                name="award" 
+                size="xs" 
+                variant="secondary"
+                :aria-label="'Certificação'"
+              />
+              <span>Certificação ISO 9001</span>
+            </span>
+            <span class="flex items-center space-x-1">
+              <IconWrapper 
+                name="check-circle" 
+                size="xs" 
+                variant="secondary"
+                :aria-label="'Registro'"
+              />
+              <span>Registro CREA</span>
+            </span>
+            <span class="flex items-center space-x-1">
+              <IconWrapper 
+                name="clipboard-list" 
+                size="xs" 
+                variant="secondary"
+                :aria-label="'CAU'"
+              />
+              <span>CAU Ativo</span>
+            </span>
           </div>
         </div>
       </div>
@@ -154,15 +198,20 @@
 </template>
 
 <script>
+import IconWrapper from '@/components/ui/IconWrapper.vue'
+
 export default {
   name: 'FooterSection',
+  components: {
+    IconWrapper
+  },
   data() {
     return {
       socialMedia: [
-        { name: 'LinkedIn', icon: '💼', href: '#' },
-        { name: 'Instagram', icon: '📸', href: '#' },
-        { name: 'Facebook', icon: '📘', href: '#' },
-        { name: 'WhatsApp', icon: '💬', href: 'https://wa.me/5594999999999' }
+        { name: 'LinkedIn', icon: 'briefcase', href: '#' },
+        { name: 'Instagram', icon: 'camera', href: '#' },
+        { name: 'Facebook', icon: 'briefcase', href: '#' },
+        { name: 'WhatsApp', icon: 'message-circle', href: 'https://wa.me/5594999999999' }
       ],
       quickLinks: [
         { name: 'Início', href: '#hero' },

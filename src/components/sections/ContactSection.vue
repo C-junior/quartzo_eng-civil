@@ -28,7 +28,12 @@
             <BaseCard padding="lg" class="hover:shadow-lg transition-shadow duration-300">
               <div class="flex items-start space-x-4">
                 <div class="w-12 h-12 bg-gradient-to-br from-wine-900 to-primary-500 rounded-xl flex items-center justify-center text-white text-xl">
-                  📞
+                  <IconWrapper 
+                    name="phone" 
+                    size="lg" 
+                    variant="white"
+                    :aria-label="'Telefone'"
+                  />
                 </div>
                 <div class="flex-1">
                   <h3 class="font-semibold text-gray-900 mb-2">Telefone</h3>
@@ -53,7 +58,12 @@
             <BaseCard padding="lg" class="hover:shadow-lg transition-shadow duration-300">
               <div class="flex items-start space-x-4">
                 <div class="w-12 h-12 bg-gradient-to-br from-wine-900 to-primary-500 rounded-xl flex items-center justify-center text-white text-xl">
-                  ✉️
+                  <IconWrapper 
+                    name="mail" 
+                    size="lg" 
+                    variant="white"
+                    :aria-label="'E-mail'"
+                  />
                 </div>
                 <div class="flex-1">
                   <h3 class="font-semibold text-gray-900 mb-2">E-mail</h3>
@@ -78,7 +88,12 @@
             <BaseCard padding="lg" class="hover:shadow-lg transition-shadow duration-300">
               <div class="flex items-start space-x-4">
                 <div class="w-12 h-12 bg-gradient-to-br from-wine-900 to-primary-500 rounded-xl flex items-center justify-center text-white text-xl">
-                  📍
+                  <IconWrapper 
+                    name="map-pin" 
+                    size="lg" 
+                    variant="white"
+                    :aria-label="'Endereço'"
+                  />
                 </div>
                 <div class="flex-1">
                   <h3 class="font-semibold text-gray-900 mb-2">Endereço</h3>
@@ -96,7 +111,12 @@
             <BaseCard padding="lg" class="hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br from-accent-green to-green-600 text-white">
               <div class="flex items-start space-x-4">
                 <div class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center text-white text-xl">
-                  💬
+                  <IconWrapper 
+                    name="message-circle" 
+                    size="lg" 
+                    variant="white"
+                    :aria-label="'WhatsApp'"
+                  />
                 </div>
                 <div class="flex-1">
                   <h3 class="font-semibold mb-2">WhatsApp</h3>
@@ -155,7 +175,12 @@
         <BaseCard padding="none" class="overflow-hidden">
           <div class="bg-gradient-to-br from-wine-900 to-primary-500 h-64 lg:h-80 flex items-center justify-center text-white">
             <div class="text-center space-y-4">
-              <div class="text-6xl">🗺️</div>
+              <IconWrapper 
+                name="map" 
+                size="2xl" 
+                variant="white"
+                :aria-label="'Localização'"
+              />
               <div class="text-xl font-medium">Localização</div>
               <div class="text-sm opacity-75">Avenida Eliezer Batista, 456</div>
               <div class="text-sm opacity-75">Centro, Canaã dos Carajás - Pará</div>
@@ -196,13 +221,15 @@
 import BaseCard from '@/components/ui/BaseCard.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import ContactForm from '@/components/forms/ContactForm.vue'
+import IconWrapper from '@/components/ui/IconWrapper.vue'
 
 export default {
   name: 'ContactSection',
   components: {
     BaseCard,
     BaseButton,
-    ContactForm
+    ContactForm,
+    IconWrapper
   },
   data() {
     return {
