@@ -148,7 +148,7 @@ export default {
       certifications: [
         {
           icon: '📋',
-          name: 'CREA-SP',
+          name: 'CREA-PA',
           description: 'Registro Ativo'
         },
         {

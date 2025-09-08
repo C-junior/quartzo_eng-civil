@@ -12,8 +12,8 @@
                 class="w-full h-full object-contain"
               />
             </div>
-            <div class="hidden sm:block">
-              <h1 class="text-2xl font-bold">
+            <div class="hidden xxs:block">
+              <h1 class="text-lg xxs:text-xl sm:text-2xl font-bold">
                 <span class="company-name">Quartzo</span>
                 <span class="text-gray-900 ml-1">Engenharia</span>
               </h1>
@@ -48,7 +48,7 @@
           <!-- Mobile menu button -->
           <button
             @click="toggleMobileMenu"
-            class="lg:hidden p-2 rounded-md text-gray-700 hover:text-wine-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-wine-500 focus:ring-inset"
+            class="mobile-menu-button lg:hidden p-2 rounded-md text-gray-700 hover:text-wine-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-wine-500 focus:ring-inset"
             aria-label="Toggle mobile menu"
           >
             <svg
@@ -85,7 +85,7 @@
     >
       <div
         v-if="isMobileMenuOpen"
-        class="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-50"
+        class="mobile-menu lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-50"
       >
         <div class="px-4 py-6 space-y-4">
           <a
@@ -93,7 +93,7 @@
             :key="item.name"
             :href="item.href"
             class="block text-gray-700 hover:text-wine-900 font-medium py-2 transition-colors duration-200"
-            @click="handleMobileNavClick"
+            @click="handleMobileNavClick($event, item.href)"
           >
             {{ item.name }}
           </a>
@@ -103,7 +103,7 @@
             size="md"
             full-width
             class="mt-4"
-            @click="handleMobileNavClick('#contact')"
+@click="handleMobileNavClick($event, '#contact')"
           >
             Orçamento Grátis
           </BaseButton>
@@ -130,6 +130,7 @@ export default {
   },
   data() {
     return {
+      outsideClickHandler: null,
       navigationItems: [
         { name: 'Início', href: '#hero' },
         { name: 'Serviços', href: '#services' },
@@ -159,7 +160,8 @@ export default {
     }
   },
   methods: {
-    toggleMobileMenu() {
+    toggleMobileMenu(event) {
+      event.stopPropagation()
       useMainStore().toggleMobileMenu()
     },
     
@@ -172,7 +174,9 @@ export default {
       this.handleSmoothScroll(event)
     },
     
-    handleMobileNavClick(href) {
+    handleMobileNavClick(event, href) {
+      event.preventDefault()
+      event.stopPropagation()
       this.closeMobileMenu()
       if (href) {
         this.scrollToSection(href.replace('#', ''))
@@ -203,11 +207,26 @@ export default {
   
   mounted() {
     // Close mobile menu when clicking outside
-    document.addEventListener('click', (event) => {
-      if (this.isMobileMenuOpen && !this.$el.contains(event.target)) {
+    this.outsideClickHandler = (event) => {
+      // Don't close if clicking on mobile menu content or hamburger button
+      const mobileMenu = this.$el.querySelector('.mobile-menu')
+      const menuButton = this.$el.querySelector('.mobile-menu-button')
+      
+      // Check if the click is outside both the menu and the button
+      if (this.isMobileMenuOpen && 
+          mobileMenu && 
+          menuButton && 
+          !mobileMenu.contains(event.target) && 
+          !menuButton.contains(event.target) &&
+          !event.target.closest('.mobile-menu-button')) {
         this.closeMobileMenu()
       }
-    })
+    }
+    
+    // Use a slight delay to prevent immediate closing when toggling
+    setTimeout(() => {
+      document.addEventListener('click', this.outsideClickHandler)
+    }, 100)
     
     // Close mobile menu on window resize
     window.addEventListener('resize', () => {
@@ -215,6 +234,12 @@ export default {
         this.closeMobileMenu()
       }
     })
+  },
+  
+  beforeUnmount() {
+    if (this.outsideClickHandler) {
+      document.removeEventListener('click', this.outsideClickHandler)
+    }
   }
 }
 </script>

@@ -15,8 +15,8 @@
         <!-- Content -->
         <div class="space-y-8 animate-slide-in-left">
           <!-- Modern Startup Badge -->
-          <div class="hero-badge">
-            <span class="text-transparent bg-gradient-to-r from-wine-500 to-primary-500 bg-clip-text font-semibold">
+          <div class="hero-badge border border-white ">
+            <span class="text-transparent bg-gradient-to-r from-wine-500 to-primary-500 bg-clip-text font-semibold ">
               Soluções de Engenharia de Nova Geração
             </span>
           </div>
@@ -54,7 +54,7 @@
               variant="primary"
               size="lg"
               @click="scrollToSection('contact')"
-              class="group bg-white text-gray-900 hover:bg-white/90 font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-startup"
+              class="group bg-white text-gray-900 hover:bg-white/90 font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-startup"
             >
               <span>Começar Agora</span>
               <svg class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

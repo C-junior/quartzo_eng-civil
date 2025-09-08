@@ -92,7 +92,8 @@ export default {
         'disabled:cursor-not-allowed',
         'disabled:transform-none',
         'active:scale-95',
-        'select-none'
+        'select-none',
+        'will-change-transform'
       ]
       
       // Full width
@@ -132,8 +133,9 @@ export default {
           'hover:from-wine-800',
           'hover:to-wine-700',
           'focus-visible:ring-wine-500',
-          'transform',
           'hover:scale-105',
+          'transition-transform',
+          'duration-200',
           ...(this.shadow ? ['shadow-md', 'hover:shadow-lg'] : [])
         ],
         secondary: [
@@ -144,8 +146,9 @@ export default {
           'hover:from-primary-600',
           'hover:to-primary-700',
           'focus-visible:ring-primary-400',
-          'transform',
           'hover:scale-105',
+          'transition-transform',
+          'duration-200',
           ...(this.shadow ? ['shadow-md', 'hover:shadow-lg'] : [])
         ],
         outline: [
@@ -156,8 +159,9 @@ export default {
           'hover:bg-wine-900',
           'hover:text-white',
           'focus-visible:ring-wine-500',
-          'transform',
           'hover:scale-105',
+          'transition-transform',
+          'duration-200',
           ...(this.shadow ? ['hover:shadow-md'] : [])
         ],
         ghost: [
@@ -165,8 +169,9 @@ export default {
           'bg-transparent',
           'hover:bg-wine-50',
           'focus-visible:ring-wine-300',
-          'transform',
-          'hover:scale-105'
+          'hover:scale-105',
+          'transition-transform',
+          'duration-200'
         ],
         success: [
           'bg-gradient-to-r',
@@ -176,8 +181,9 @@ export default {
           'hover:from-green-700',
           'hover:to-green-800',
           'focus-visible:ring-green-500',
-          'transform',
           'hover:scale-105',
+          'transition-transform',
+          'duration-200',
           ...(this.shadow ? ['shadow-md', 'hover:shadow-lg'] : [])
         ],
         warning: [
@@ -188,8 +194,9 @@ export default {
           'hover:from-amber-600',
           'hover:to-amber-700',
           'focus-visible:ring-amber-400',
-          'transform',
           'hover:scale-105',
+          'transition-transform',
+          'duration-200',
           ...(this.shadow ? ['shadow-md', 'hover:shadow-lg'] : [])
         ],
         danger: [
@@ -200,8 +207,9 @@ export default {
           'hover:from-red-700',
           'hover:to-red-800',
           'focus-visible:ring-red-500',
-          'transform',
           'hover:scale-105',
+          'transition-transform',
+          'duration-200',
           ...(this.shadow ? ['shadow-md', 'hover:shadow-lg'] : [])
         ]
       }
