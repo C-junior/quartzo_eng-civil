@@ -130,7 +130,7 @@
       </div>
       
       <!-- Certifications & Awards -->
-      <div class="bg-white rounded-2xl p-8 lg:p-12">
+      <!-- <div class="bg-white rounded-2xl p-8 lg:p-12">
         <div class="text-center mb-12">
           <h3 class="heading-md mb-4">Certificações e Reconhecimentos</h3>
           <p class="body-md text-gray-600 max-w-2xl mx-auto">
@@ -153,7 +153,7 @@
             <p class="text-gray-600 text-xs">{{ certification.description }}</p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
