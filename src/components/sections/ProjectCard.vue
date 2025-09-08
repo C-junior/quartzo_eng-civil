@@ -2,8 +2,15 @@
   <BaseCard :hover="true" class="h-full overflow-hidden group">
     <!-- Project Image -->
     <div class="relative h-48 bg-gradient-to-br from-wine-900 to-primary-500 overflow-hidden">
-      <!-- Placeholder for project image -->
-      <div class="w-full h-full flex items-center justify-center text-white">
+      <!-- Project category image -->
+      <img 
+        :src="getCategoryImage(project.category)" 
+        :alt="project.category"
+        class="w-full h-full object-cover"
+        @error="handleImageError"
+      />
+      <!-- Fallback overlay when image fails to load -->
+      <div v-if="imageError" class="absolute inset-0 w-full h-full flex items-center justify-center text-white bg-gradient-to-br from-wine-900 to-primary-500">
         <div class="text-center space-y-2">
           <IconWrapper 
             :name="getCategoryIcon(project.category)" 
@@ -102,6 +109,11 @@ export default {
     }
   },
   emits: ['view-details'],
+  data() {
+    return {
+      imageError: false
+    }
+  },
   methods: {
     getCategoryIcon(category) {
       const icons = {
@@ -111,9 +123,26 @@ export default {
         'Infraestrutura': 'bridge',
         'Educacional': 'building',
         'Hospitalar': 'building',
+        'Habitacional': 'home',
         'Esportivo': 'building'
       }
       return icons[category] || 'building'
+    },
+    
+    getCategoryImage(category) {
+      const images = {
+        'Residencial': '/src/assets/images/residencial.png',
+        'Comercial': '/src/assets/images/comercial.jpg',
+        'Industrial': '/src/assets/images/industrial.jpg',
+        'Infraestrutura': '/src/assets/images/infraestrutura.jpg',
+        'Educacional': '/src/assets/images/educacional.jpg',
+        'Habitacional': '/src/assets/images/habitacional.jpg'
+      }
+      return images[category] || '/src/assets/images/residencial.png'
+    },
+    
+    handleImageError() {
+      this.imageError = true
     },
     
     viewDetails() {

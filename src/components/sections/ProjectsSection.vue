@@ -97,7 +97,14 @@
       <div v-if="selectedProject" class="space-y-6">
         <!-- Project Image -->
         <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-wine-900 to-primary-500 rounded-lg overflow-hidden">
-          <div class="flex items-center justify-center text-white">
+          <img 
+            :src="getCategoryImage(selectedProject.category)" 
+            :alt="selectedProject.category"
+            class="w-full h-full object-cover"
+            @error="handleModalImageError"
+          />
+          <!-- Fallback when image fails to load -->
+          <div v-if="modalImageError" class="absolute inset-0 flex items-center justify-center text-white bg-gradient-to-br from-wine-900 to-primary-500">
             <div class="text-center space-y-4">
               <IconWrapper 
                 :name="getCategoryIcon(selectedProject.category)" 
@@ -210,6 +217,7 @@ export default {
       isLoading: false,
       isModalOpen: false,
       selectedProject: null,
+      modalImageError: false,
       
       // Extended projects data for Pará region
       allProjects: [
@@ -362,6 +370,7 @@ export default {
     
     handleViewDetails(project) {
       this.selectedProject = project
+      this.modalImageError = false // Reset image error state
       this.isModalOpen = true
     },
     
@@ -376,6 +385,22 @@ export default {
         'Esportivo': 'building'
       }
       return icons[category] || 'building'
+    },
+    
+    getCategoryImage(category) {
+      const images = {
+        'Residencial': '/src/assets/images/residencial.png',
+        'Comercial': '/src/assets/images/comercial.jpg',
+        'Industrial': '/src/assets/images/industrial.jpg',
+        'Infraestrutura': '/src/assets/images/infraestrutura.jpg',
+        'Educacional': '/src/assets/images/educacional.jpg',
+        'Habitacional': '/src/assets/images/habitacional.jpg'
+      }
+      return images[category] || '/src/assets/images/residencial.png'
+    },
+    
+    handleModalImageError() {
+      this.modalImageError = true
     },
     
     contactAboutProject() {
