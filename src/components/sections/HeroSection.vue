@@ -1,7 +1,16 @@
 <template>
   <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Modern Gradient Background -->
-    <div class="absolute inset-0 wine-gradient"></div>
+    <!-- Hero Banner Image with Overlay -->
+    <div class="absolute inset-0">
+      <!-- Background Image positioned to the right -->
+      <div class="absolute inset-0 bg-cover bg-right bg-no-repeat" 
+           :style="heroBannerStyle"></div>
+      <!-- Red Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-wine-900/95 via-wine-800/10 to-wine-700/2"></div>
+    </div>
+    
+    <!-- Modern Gradient Background (as fallback) -->
+    <div class="absolute inset-0 wine-gradient opacity-80"></div>
     
     <!-- Geometric Background Elements -->
     <div class="absolute inset-0 wine-geometric-bg"></div>
@@ -94,32 +103,7 @@
           <div class="relative">
             <!-- Central Hero Graphic -->
             <div class="aspect-w-4 aspect-h-5 relative">
-              <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 rounded-3xl backdrop-blur-lg border border-white/20 shadow-startup overflow-hidden">
-                <!-- Modern Grid Pattern -->
-                <div class="absolute inset-0 opacity-10">
-                  <div class="h-full w-full" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 20px 20px;"></div>
-                </div>
-                
-                <!-- Central Content -->
-                <div class="relative z-10 flex items-center justify-center h-full text-white">
-                  <div class="photo-container">
-                    <div class="photo-frame">
-                      <img 
-                        src="@/assets/images/erick.png" 
-                        alt="Erick Silva - Engenheiro Civil"
-                        class="photo-image"
-                      />
-                    </div>
-                    <!-- Elementos decorativos mantidos -->
-                    <div class="photo-decoration">
-                      <div class="text-center space-y-2 mt-6">
-                        <div class="text-2xl font-bold text-white">Erick Silva</div>
-                        <div class="text-lg text-white/80">Engenheiro Civil</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
             </div>
             
             <!-- Floating Achievement Cards -->
@@ -204,6 +188,7 @@
 <script>
 import BaseButton from '@/components/ui/BaseButton.vue'
 import IconWrapper from '@/components/ui/IconWrapper.vue'
+import heroBannerImage from '@/assets/images/hero-banner.jpg'
 
 export default {
   name: 'HeroSection',
@@ -227,6 +212,13 @@ export default {
         { value: '98%', label: 'Satisfação do Cliente', icon: 'star' },
         { value: '24/7', label: 'Suporte Disponível', icon: 'message-circle' }
       ]
+    }
+  },
+  computed: {
+    heroBannerStyle() {
+      return {
+        backgroundImage: `url(${heroBannerImage})`
+      }
     }
   },
   mounted() {
@@ -386,6 +378,11 @@ export default {
     radial-gradient(circle at 20% 80%, rgba(123, 30, 38, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(198, 40, 40, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(141, 47, 55, 0.05) 0%, transparent 50%);
+}
+
+/* Hero Banner Background */
+.hero-banner-bg {
+  background-image: url('@/assets/images/hero-banner.jpg');
 }
 
 /* Enhanced micro-interactions */
