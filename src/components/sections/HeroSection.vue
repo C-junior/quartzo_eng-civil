@@ -91,7 +91,14 @@
                   {{ stat.value }}
                 </div>
                 <div class="text-sm text-gray-700 mt-1 font-medium">{{ stat.label }}</div>
-                <div class="text-xl mt-1 group-hover:animate-bounce">{{ stat.icon }}</div>
+                <div class="text-xl mt-1 group-hover:animate-bounce">
+                  <IconWrapper 
+                    :name="stat.icon" 
+                    size="lg" 
+                    variant="muted"
+                    :aria-label="stat.label"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -202,7 +209,7 @@ export default {
       animationComplete: false,
       statsVisible: false,
       modernFeatures: [
-        'Design Assistido por IA',
+        'Design Assistido',
         'Colaboração Digital', 
         'Monitoramento em Tempo Real',
         'Soluções Sustentáveis'

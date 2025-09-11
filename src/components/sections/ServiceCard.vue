@@ -2,9 +2,14 @@
   <BaseCard :hover="true" class="h-full">
     <template #header>
       <div class="flex items-center space-x-4">
-        <div class="w-12 h-12 bg-gradient-to-br from-wine-900 to-primary-500 rounded-xl flex items-center justify-center text-white text-2xl">
+        <!-- <div class="w-12 h-12 bg-gradient-to-br from-wine-900 to-primary-500 rounded-xl flex items-center justify-center text-white text-2xl">
           {{ service.icon }}
-        </div>
+        </div> -->
+        <IconWrapper
+         :name="service.icon"
+                    size= "2xl"
+                    variant="wine"
+        />
         <h3 class="heading-sm">{{ service.title }}</h3>
       </div>
     </template>
@@ -47,12 +52,14 @@
 <script>
 import BaseCard from '@/components/ui/BaseCard.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
+import IconWrapper from '@/components/ui/IconWrapper.vue'
 
 export default {
   name: 'ServiceCard',
   components: {
     BaseCard,
-    BaseButton
+    BaseButton,
+    IconWrapper
   },
   props: {
     service: {
