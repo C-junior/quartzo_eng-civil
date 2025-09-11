@@ -51,7 +51,7 @@ export default {
   },
   computed: {
     cardClasses() {
-      const base = ['transition-all', 'duration-300', 'ease-out']
+      const base = ['flex', 'flex-col', 'h-full', 'transition-all', 'duration-300', 'ease-out']
       
       // Border radius
       const roundedClasses = {
@@ -138,12 +138,12 @@ export default {
     
     bodyClasses() {
       const paddingClasses = {
-        none: [],
-        xs: ['p-2'],
-        sm: ['p-4'],
-        default: ['p-6'],
-        lg: ['p-8'],
-        xl: ['p-10']
+        none: ['flex-grow'],
+        xs: ['p-2', 'flex-grow'],
+        sm: ['p-4', 'flex-grow'],
+        default: ['p-6', 'flex-grow'],
+        lg: ['p-8', 'flex-grow'],
+        xl: ['p-10', 'flex-grow']
       }
       
       return paddingClasses[this.padding]
